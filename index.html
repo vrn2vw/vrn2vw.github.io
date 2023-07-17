@@ -36,18 +36,15 @@
                 position: relative;
                 overflow: hidden;
                 border-radius: 50%;
-                display: flex;
-                justify-content: center;
-                align-items: center;
             }
 
             .profile-pic {
-                display: inline;
-                margin: 0 auto;
+                position: relative;
                 height: 100%;
                 width: auto;
+                object-fit: cover;
+                object-position: center;  /* This ensures the center part of the image is shown */
             }
-
 
             /*Trying to set the text next to the image */
             .headertext {
