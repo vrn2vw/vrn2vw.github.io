@@ -29,6 +29,23 @@
                 font-family: 'Dancing Script', cursive;
             }
 
+            /*Cropping the image into a square as per GPT*/
+            .image-cropper {
+                width: 200px;
+                height: 200px;
+                position: relative;
+                overflow: hidden;
+                border-radius: 50%;
+            }
+
+            .profile-pic {
+                display: inline;
+                margin: 0 auto;
+                height: 100%;
+                width: auto;
+            }
+
+
             /*Trying to set the text next to the image */
             .headertext {
                 position: absolute;
@@ -59,13 +76,14 @@
                 color: orangered;
             }
 
+            /*Setting up the text and links to show up inline*/
             .links {
                 display: inline-block;
             }
 
             .abouttext {
                 display: inline-block;
-                width: 10%; 
+                width: 20%; 
             }
 
             .about {
@@ -77,7 +95,9 @@
     <body>
         <div class="abovethefold"> 
             <!--- Headshot and text to add to the right of it -->
-            <img src="VimalHeadshot.jpg" width = 45%>
+            <div class="image-cropper">
+                <img class="profile-pic" src="VimalHeadshot.jpg" alt="Vimal Nair">
+            </div>
             <div class="headertext">
                 <h3> Hi there, I'm</h3>
                 <h1>Vimal Nair</h1>
