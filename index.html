@@ -79,18 +79,21 @@
                 color: black;
             }
 
-            a:hover {
-                color: orangered;
+            /* Creating buttons with coloring */
+            .links a:hover {
+                background-color: #0069d9;
+                color: #fff;
             }
 
-            /*Setting up the text and links to show up inline*/
-            .links {
+            .links a {
                 display: inline-block;
-            }
-
-            .abouttext {
-                display: inline-block;
-                width: 30%; 
+                background-color: #f8f9fa;
+                color: #333;
+                text-decoration: none;
+                padding: 10px 20px;
+                margin: 10px;
+                border-radius: 5px;
+                transition: all 0.3s ease-in-out;
             }
 
             .about {
@@ -114,20 +117,15 @@
 
         <!--- About section links -->
         <div class="about">
-            <div class="abouttext">
-                <h5>Links to see my professional experience and coding samples</h5>
-            </div>
             <div class="links">
                 <ul>
                     <a href="https://www.linkedin.com/in/v-nair/" target="_blank" rel="noopener noreferrer">
-                        <li>
-                            <i class="fa-brands fa-linkedin" style="color: #000000;"></i>
-                                LinkedIn</li>
+                            <i class="fa-brands fa-linkedin" style="color: #000000;">
+                                LinkedIn
                     </a>
                     <a href="https://github.com/vrn2vw/" target="_blank" rel="noopener noreferrer">
-                        <li>
                             <i class="fa-brands fa-github" style="color: #000000;"></i>
-                                GitHub</li>
+                                GitHub
                     </a>
                 </ul>
             </div>
