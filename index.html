@@ -55,12 +55,20 @@
                 margin-left: 20px;
             }
 
-            /*Setting up the background color for the above the fold*/ 
+            /*Setting up the background color, display, and alignment for the above the fold and right section*/ 
             .abovethefold {
                 background-color: whitesmoke;
                 display: flex;
                 align-items: center;
             }
+            
+            .right-section {
+                display: flex;
+                flex-direction: column; /* this makes the children layout in a column */
+            }
+
+            .links ul {
+                padding: 0; 
 
             /*Setting styling for "ul" elements*/
             ul {
@@ -101,33 +109,34 @@
     </head>
     <body>
         <div class="abovethefold"> 
-            <!--- Headshot and text to add to the right of it -->
+            <!-- Headshot -->
             <div class="image-cropper">
                 <img class="profile-pic" src="VimalHeadshot.jpg" alt="Vimal Nair">
             </div>
-            <div class="headertext">
-                <h3> Hi there, I'm</h3>
-                <h1>Vimal Nair</h1>
-                <h4>...but most people call me V</h4>
-            </div>
-        </div>
+            <!-- Text and links to the right of the headshot -->
+            <div class="right-section">
+                <div class="headertext">
+                    <h3> Hi there, I'm</h3>
+                    <h1>Vimal Nair</h1>
+                    <h4>...but most people call me V</h4>
+                </div>
 
-        <!--- About section links -->
-        <div class="about">
-            <div class="links">
-                <ul>
-                    <a href="https://www.linkedin.com/in/v-nair/" target="_blank" rel="noopener noreferrer">
+                <!--- LinkedIn and Github Links -->
+                <div class="links">
+                    <ul>
+                        <a href="https://www.linkedin.com/in/v-nair/" target="_blank" rel="noopener noreferrer">
                             <i class="fa-brands fa-linkedin" style="color: #000000;"></i>
-                                LinkedIn
-                    </a>
-                    <a href="https://github.com/vrn2vw/" target="_blank" rel="noopener noreferrer">
+                            LinkedIn
+                        </a>
+                        <a href="https://github.com/vrn2vw/" target="_blank" rel="noopener noreferrer">
                             <i class="fa-brands fa-github" style="color: #000000;"></i>
-                                GitHub
-                    </a>
-                </ul>
+                            GitHub
+                        </a>
+                    </ul>
+                </div>
             </div>
         </div>
-        
+    
         <div>
             <p>This is a page that will eventually hold all my key links</p>
             <p> Making a website from HTML is kind of a pain </p>
