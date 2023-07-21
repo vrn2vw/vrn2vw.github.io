@@ -123,7 +123,8 @@
             }
 
             .active-button {
-                color: red;
+                color: orangered;
+                background-color: #fff;
             }
 
             /* Footer content*/
@@ -190,16 +191,15 @@
         <!---Tab Section-->
         <div class="tabs-all">
             <div>
-                <button class="tab-button" onclick="openTab('Tab1')">Product Management</button>
-                <button class="tab-button" onclick="openTab('Tab2')">Leading Teams</button>
-                <button class="tab-button" onclick="openTab('Tab3')">Data Science</button>
-                <button class="tab-button" onclick="openTab('Tab4')">Strategic Thinking</button>
-                <button class="tab-button" onclick="openTab('Tab5')">Data Engineering</button>
+                <button class="tab-button" onclick="openTab('PM')">Product Management</button>
+                <button class="tab-button" onclick="openTab('Lead')">Leading Teams</button>
+                <button class="tab-button" onclick="openTab('Strat')">Strategic Thinking</button>
+                <button class="tab-button" onclick="openTab('DE')">Data Engineering</button>
+                <button class="tab-button" onclick="openTab('DS')">Data Science</button>
             </div>
             
             <!-- Add these tab contents -->
-            <div id="Tab1" class="tab">
-                <h2>Product Management</h2>
+            <div id="PM" class="tab">
                 <p>I've spent a good chunk of my career helping shape the world of tech, from the retail behemoth Amazon to nimble 
                     startups like Gather Vacations. At Amazon, I wore the hat of a Senior Technical Product Manager for Alexa Shopping
                      List, where we improved the UI worldwide and saw customers and usage rocket by 41% and 28% respectively, 
@@ -209,8 +209,7 @@
                     <p>Bottom line: I enjoy diving deep into the tech world, leading teams, and creating products that users can't live without.</p>
             </div>
             
-            <div id="Tab2" class="tab">
-                <h2>Leading Teams</h2>
+            <div id="Lead" class="tab">
                 <p>I've had the pleasure of leading some truly amazing teams in the tech space. At Gather Vacations, I wear multiple 
                     hats as the VP of Tech and Head of Product, guiding a diverse bunch of talented folks from developers and a data 
                     engineer to a technical solutions specialist. We're driving innovation and shaking things up in the vacation rental
@@ -224,26 +223,7 @@
                      or strategic initiatives.</p>
             </div>
             
-            <div id="Tab3" class="tab">
-                <h2>Data Science</h2>
-                <p>I've had quite the adventure navigating the realms of data science in my career. At Bungalow, I teamed up with 
-                    some incredibly smart data scientists to cook up a predictive pricing model, making our property rental revenues 
-                    sing to a more profitable tune. </p>
-
-                    <p>In my Amazon Prime days, I wore the Senior PM hat, and we created a nifty recommendation widget. It smartly 
-                    suggested seasonally relevant items to customers, adding some extra sparkle to their shopping carts. It was all 
-                    about getting into the mindset of our customers and predicting what they'd love next.</p>
-                    
-                    <p>Then, there was Alexa Shopping List. As a Senior Technical PM, we took 'smart' to a whole new level. Imagine 
-                        adding an item to your shopping list and Alexa immediately suggesting the next item based on your previous 
-                        choices - neat, right? </p>
-                    
-                    <p>In a nutshell, I absolutely love diving into data, uncovering insights, and using those nuggets of knowledge 
-                        to create experiences customers adore!</p>
-            </div>
-            
-            <div id="Tab4" class="tab">
-                <h2>Strategic Thinking</h2>
+            <div id="Strat" class="tab">
                 <p>Let's talk strategy - it's all about setting a clear, future-focused vision to guide the course. At Gather Vacations,
                      and back in my Amazon days, I cooked up long-term vision docs that mapped the destiny of the products I steered. But
                       visions need fuel to come to life. That's where my knack for smart prioritization kicks in. With a $500K+ tech
@@ -254,8 +234,7 @@
                       planning wisely, and getting the most bang for our buck. Bring on the next challenge!</p>
             </div>
             
-            <div id="Tab5" class="tab">
-                <h2>Data Engineering</h2>
+            <div id="DE" class="tab">
                 <p>Data engineering is the foundation for which a lot of other teams rely, luckily I've had some great experiences. 
                     With Alexa Shopping List at Amazon, we launched a brand new API protocol that had a far-reaching impact - we're 
                     talking millions of customers worldwide and over 30 third-party stakeholders. </p>
@@ -271,6 +250,24 @@
                     <p>In essence, I'm all about harnessing the power of data to drive success. Whether it's setting strategies, 
                         unblocking pipelines, or building infrastructure, you'll find me right there in the mix.</p>
             </div>
+            
+            <div id="DS" class="tab">
+                <p>I've had quite the adventure navigating the realms of data science in my career. At Bungalow, I teamed up with 
+                    some incredibly smart data scientists to cook up a predictive pricing model, making our property rental revenues 
+                    sing to a more profitable tune. </p>
+
+                    <p>In my Amazon Prime days, I wore the Senior PM hat, and we created a nifty recommendation widget. It smartly 
+                    suggested seasonally relevant items to customers, adding some extra sparkle to their shopping carts. It was all 
+                    about getting into the mindset of our customers and predicting what they'd love next.</p>
+                    
+                    <p>Then, there was Alexa Shopping List. As a Senior Technical PM, we took 'smart' to a whole new level. Imagine 
+                        adding an item to your shopping list and Alexa immediately suggesting the next item based on your previous 
+                        choices - neat, right? </p>
+                    
+                    <p>In a nutshell, I absolutely love diving into data, uncovering insights, and using those nuggets of knowledge 
+                        to create experiences customers adore!</p>
+            </div>
+
         </div>
 
         <!--- Footer -->
