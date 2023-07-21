@@ -109,6 +109,8 @@
                 padding: 20px; 
             }
 
+
+
             /* Footer content*/
             .footer {
                 background-color: #f8f9fa;
@@ -122,6 +124,23 @@
             }
 
         </style>
+
+        <script>
+            //Tabs Javascript
+            function openTab(tabName) {
+                var i, tabcontent, tablinks;
+                tabcontent = document.getElementsByClassName("tab");
+                for (i = 0; i < tabcontent.length; i++) {
+                    tabcontent[i].style.display = "none";
+                }
+                tablinks = document.getElementsByClassName("tab-button");
+                for (i = 0; i < tablinks.length; i++) {
+                    tablinks[i].className = tablinks[i].className.replace(" active-button", "");
+                }
+                document.getElementById(tabName).style.display = "block";
+                event.currentTarget.className += " active-button";
+            }
+        </script>
     </head>
     <body>
         <div class="abovethefold"> 
