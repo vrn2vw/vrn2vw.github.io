@@ -153,19 +153,40 @@
 
         <script>
             //Tabs Javascript
+            var openedTab = null; // this variable will store the name of the opened tab, if any
+
             function openTab(tabName) {
                 var i, tabcontent, tablinks;
                 tabcontent = document.getElementsByClassName("tab");
                 for (i = 0; i < tabcontent.length; i++) {
-                    tabcontent[i].style.display = "none";
+                    tabcontent[i].style.display = "none"; // hide all tabs
                 }
                 tablinks = document.getElementsByClassName("tab-button");
                 for (i = 0; i < tablinks.length; i++) {
-                    tablinks[i].className = tablinks[i].className.replace(" active-button", "");
+                    tablinks[i].className = tablinks[i].className.replace(" active-button", ""); // remove all active-button classes
                 }
-                document.getElementById(tabName).style.display = "block";
-                event.currentTarget.className += " active-button";
+
+                if(openedTab == tabName) { // if the clicked tab is already opened
+                    openedTab = null; // we just close it and leave
+                } else { // if the clicked tab is not opened
+                    document.getElementById(tabName).style.display = "block"; // show it
+                    event.currentTarget.className += " active-button"; // make it active
+                    openedTab = tabName; // and mark it as the opened tab
+                }
             }
+        </script>
+The key changes are:
+
+We added a variable openedTab which keeps track of the currently opened tab.
+We added an if condition in openTab to check whether the tab we're trying to open is already open. If it is, we close it by hiding all tabs and removing all active-button classes. If it isn't, we open it and mark it as active.
+You do not need to change any CSS to support this, your current CSS setup should be sufficient.
+
+
+
+
+
+
+
         </script>
     </head>
     <body>
