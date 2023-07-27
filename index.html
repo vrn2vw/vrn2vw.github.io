@@ -19,7 +19,15 @@
                 margin: 0;
                 font-family: 'Noto Serif Georgian', serif;
                 background-color: whitesmoke;
+                display: flex;
+                flex-direction: column;
+                min-height: 100vh;
             }
+
+            .content-wrapper {
+                flex: 1 0 auto; /* This allows the content to grow and shrink, but not shrink below its base size, effectively pushing the footer down */
+            }
+
             h1 {
                 font-family: 'Castoro Titling', sans-serif;
             }
@@ -164,6 +172,7 @@
                 bottom: 0;
                 width: 100%;
                 font-size: 13px;
+                flex-shrink: 0; /* This prevents the footer from shrinking and moving up if there isn't enough content */
             }
 
         </style>
@@ -194,132 +203,134 @@
         </script>
     </head>
     <body>
-        <div class="abovethefold"> 
-            <!-- Headshot -->
-            <div class="image-cropper">
-                <img class="profile-pic" src="VimalHeadshot.jpg" alt="Vimal Nair">
+        <div class="content-wrapper">
+            <div class="abovethefold"> 
+                <!-- Headshot -->
+                <div class="image-cropper">
+                    <img class="profile-pic" src="VimalHeadshot.jpg" alt="Vimal Nair">
+                </div>
+                <!-- Text and links to the right of the headshot -->
+                <div class="right-section">
+                    <div class="headertext">
+                        <h3> Hi there, I'm</h3>
+                        <h1>Vimal Nair</h1>
+                        <h5>...but most people call me V</h4>
+                    </div>
+
+                    <!--- LinkedIn and Github Links -->
+                    <div class="links">
+                        <ul>
+                            <a href="https://www.linkedin.com/in/v-nair/" target="_blank" rel="noopener noreferrer">
+                                <i class="fa-brands fa-linkedin" style="color: #000000;"></i>
+                                LinkedIn
+                            </a>
+                            <a href="https://github.com/vrn2vw/" target="_blank" rel="noopener noreferrer">
+                                <i class="fa-brands fa-github" style="color: #000000;"></i>
+                                GitHub
+                            </a>
+                        </ul>
+                    </div>
+                </div>
             </div>
-            <!-- Text and links to the right of the headshot -->
-            <div class="right-section">
-                <div class="headertext">
-                    <h3> Hi there, I'm</h3>
-                    <h1>Vimal Nair</h1>
-                    <h5>...but most people call me V</h4>
+
+            <!---Tab Section-->
+            <div class="tab-header">
+                <h3>
+                    Work Experiences
+                </h3>
+            </div>
+            <div>
+                <p> 
+                    Click any of the below tabs to get a summary of previous work experiences. If you want to see a
+                    more detailed view of my work history, click on the LinkedIn tab above. 
+                </p>
+            </div>
+
+            <div class="tabs-all">
+                <div class ="tabs-style">
+                    <button class="tab-button" onclick="openTab('PM')">Product Management</button>
+                    <button class="tab-button" onclick="openTab('Lead')">Leading Teams</button>
+                    <button class="tab-button" onclick="openTab('Strat')">Strategic Thinking</button>
+                    <button class="tab-button" onclick="openTab('DE')">Data Engineering</button>
+                    <button class="tab-button" onclick="openTab('DS')">Data Science</button>
+                </div>
+                
+                <!-- Add these tab contents -->
+                <div id="PM" class="tab">
+                    <p>I've spent a good chunk of my career helping shape the world of tech, from the retail behemoth Amazon to nimble 
+                        startups like Gather Vacations. At Amazon, I wore the hat of a Senior Technical Product Manager for Alexa Shopping
+                        List, where we improved the UI worldwide and saw customers and usage rocket by 41% and 28% respectively, 
+                        year-on-year. At Gather Vacations, we launched an onboarding pipeline that chopped down property live times by a whopping 30%. 
+                        Did I mention that I also spearheaded Amazon Prime's strategy for some pretty big retail events? </p>
+                        
+                        <p>Bottom line: I enjoy diving deep into the tech world, leading teams, and creating products that users can't live without.</p>
+                </div>
+                
+                <div id="Lead" class="tab">
+                    <p>I've had the pleasure of leading some truly amazing teams in the tech space. At Gather Vacations, I wear multiple 
+                        hats as the VP of Tech and Head of Product, guiding a diverse bunch of talented folks from developers and a data 
+                        engineer to a technical solutions specialist. We're driving innovation and shaking things up in the vacation rental
+                        management industry together! </p>
+
+                        <p>Before Gather, I managed the pricing team at Bungalow, collaborating closely with data scientists to optimize our property rental 
+                        revenues. I cut my leadership teeth at Amazon, where I helmed a team of eight driven program and marketing managers. 
+                        Together, we orchestrated some of the biggest events for Amazon Prime. </p>
+                        
+                        <p>In essence, leading teams and driving success is my jam - whether we're talking about tech teams, product development,
+                        or strategic initiatives.</p>
+                </div>
+                
+                <div id="Strat" class="tab">
+                    <p>Let's talk strategy - it's all about setting a clear, future-focused vision to guide the course. At Gather Vacations,
+                        and back in my Amazon days, I cooked up long-term vision docs that mapped the destiny of the products I steered. But
+                        visions need fuel to come to life. That's where my knack for smart prioritization kicks in. With a $500K+ tech
+                        budget to manage at Gather, I've had to make tough calls to maximize impact.</p>
+                        
+                        <p>Whether it was at Gather, Bungalow, or Amazon, prioritizing technical resources has always been about 
+                        striking the perfect balance between customer satisfaction and business results. In short, I'm all about dreaming big,
+                        planning wisely, and getting the most bang for our buck. Bring on the next challenge!</p>
+                </div>
+                
+                <div id="DE" class="tab">
+                    <p>Data engineering is the foundation for which a lot of other teams rely, luckily I've had some great experiences. 
+                        With Alexa Shopping List at Amazon, we launched a brand new API protocol that had a far-reaching impact - we're 
+                        talking millions of customers worldwide and over 30 third-party stakeholders. </p>
+
+                        <p> Over at Bungalow, I was at the helm, strategizing the data engineering team's queue. This was a crucial move 
+                            to unblock the data pipeline for our data scientists, making sure they could continue their magic without a
+                            hitch. </p>
+                        
+                        <p>And then there's Gather Vacations - where we took data infrastructure from 0 to 1. I'm talking about building a
+                            robust data pipeline from the ground up, managed via AWS. This allowed us to seamlessly pull data from various
+                            tools and dish out some truly insightful reports.</p>
+                        
+                        <p>In essence, I'm all about harnessing the power of data to drive success. Whether it's setting strategies, 
+                            unblocking pipelines, or building infrastructure, you'll find me right there in the mix.</p>
+                </div>
+                
+                <div id="DS" class="tab">
+                    <p>I've had quite the adventure navigating the realms of data science in my career. At Bungalow, I teamed up with 
+                        some incredibly smart data scientists to cook up a predictive pricing model, making our property rental revenues 
+                        sing to a more profitable tune. </p>
+
+                        <p>In my Amazon Prime days, I wore the Senior PM hat, and we created a nifty recommendation widget. It smartly 
+                        suggested seasonally relevant items to customers, adding some extra sparkle to their shopping carts. It was all 
+                        about getting into the mindset of our customers and predicting what they'd love next.</p>
+                        
+                        <p>Then, there was Alexa Shopping List. As a Senior Technical PM, we took 'smart' to a whole new level. Imagine 
+                            adding an item to your shopping list and Alexa immediately suggesting the next item based on your previous 
+                            choices - neat, right? </p>
+                        
+                        <p>In a nutshell, I absolutely love diving into data, uncovering insights, and using those nuggets of knowledge 
+                            to create experiences customers adore!</p>
                 </div>
 
-                <!--- LinkedIn and Github Links -->
-                <div class="links">
-                    <ul>
-                        <a href="https://www.linkedin.com/in/v-nair/" target="_blank" rel="noopener noreferrer">
-                            <i class="fa-brands fa-linkedin" style="color: #000000;"></i>
-                            LinkedIn
-                        </a>
-                        <a href="https://github.com/vrn2vw/" target="_blank" rel="noopener noreferrer">
-                            <i class="fa-brands fa-github" style="color: #000000;"></i>
-                            GitHub
-                        </a>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <!---Tab Section-->
-        <div class="tab-header">
-            <h3>
-                Work Experiences
-            </h3>
-        </div>
-        <div>
-            <p> 
-                Click any of the below tabs to get a summary of previous work experiences. If you want to see a
-                 more detailed view of my work history, click on the LinkedIn tab above. 
-            </p>
-        </div>
-
-        <div class="tabs-all">
-            <div class ="tabs-style">
-                <button class="tab-button" onclick="openTab('PM')">Product Management</button>
-                <button class="tab-button" onclick="openTab('Lead')">Leading Teams</button>
-                <button class="tab-button" onclick="openTab('Strat')">Strategic Thinking</button>
-                <button class="tab-button" onclick="openTab('DE')">Data Engineering</button>
-                <button class="tab-button" onclick="openTab('DS')">Data Science</button>
-            </div>
-            
-            <!-- Add these tab contents -->
-            <div id="PM" class="tab">
-                <p>I've spent a good chunk of my career helping shape the world of tech, from the retail behemoth Amazon to nimble 
-                    startups like Gather Vacations. At Amazon, I wore the hat of a Senior Technical Product Manager for Alexa Shopping
-                     List, where we improved the UI worldwide and saw customers and usage rocket by 41% and 28% respectively, 
-                     year-on-year. At Gather Vacations, we launched an onboarding pipeline that chopped down property live times by a whopping 30%. 
-                    Did I mention that I also spearheaded Amazon Prime's strategy for some pretty big retail events? </p>
-                    
-                    <p>Bottom line: I enjoy diving deep into the tech world, leading teams, and creating products that users can't live without.</p>
-            </div>
-            
-            <div id="Lead" class="tab">
-                <p>I've had the pleasure of leading some truly amazing teams in the tech space. At Gather Vacations, I wear multiple 
-                    hats as the VP of Tech and Head of Product, guiding a diverse bunch of talented folks from developers and a data 
-                    engineer to a technical solutions specialist. We're driving innovation and shaking things up in the vacation rental
-                     management industry together! </p>
-
-                    <p>Before Gather, I managed the pricing team at Bungalow, collaborating closely with data scientists to optimize our property rental 
-                    revenues. I cut my leadership teeth at Amazon, where I helmed a team of eight driven program and marketing managers. 
-                    Together, we orchestrated some of the biggest events for Amazon Prime. </p>
-                    
-                    <p>In essence, leading teams and driving success is my jam - whether we're talking about tech teams, product development,
-                     or strategic initiatives.</p>
-            </div>
-            
-            <div id="Strat" class="tab">
-                <p>Let's talk strategy - it's all about setting a clear, future-focused vision to guide the course. At Gather Vacations,
-                     and back in my Amazon days, I cooked up long-term vision docs that mapped the destiny of the products I steered. But
-                      visions need fuel to come to life. That's where my knack for smart prioritization kicks in. With a $500K+ tech
-                       budget to manage at Gather, I've had to make tough calls to maximize impact.</p>
-                    
-                    <p>Whether it was at Gather, Bungalow, or Amazon, prioritizing technical resources has always been about 
-                     striking the perfect balance between customer satisfaction and business results. In short, I'm all about dreaming big,
-                      planning wisely, and getting the most bang for our buck. Bring on the next challenge!</p>
-            </div>
-            
-            <div id="DE" class="tab">
-                <p>Data engineering is the foundation for which a lot of other teams rely, luckily I've had some great experiences. 
-                    With Alexa Shopping List at Amazon, we launched a brand new API protocol that had a far-reaching impact - we're 
-                    talking millions of customers worldwide and over 30 third-party stakeholders. </p>
-
-                    <p> Over at Bungalow, I was at the helm, strategizing the data engineering team's queue. This was a crucial move 
-                        to unblock the data pipeline for our data scientists, making sure they could continue their magic without a
-                         hitch. </p>
-                    
-                    <p>And then there's Gather Vacations - where we took data infrastructure from 0 to 1. I'm talking about building a
-                         robust data pipeline from the ground up, managed via AWS. This allowed us to seamlessly pull data from various
-                          tools and dish out some truly insightful reports.</p>
-                    
-                    <p>In essence, I'm all about harnessing the power of data to drive success. Whether it's setting strategies, 
-                        unblocking pipelines, or building infrastructure, you'll find me right there in the mix.</p>
-            </div>
-            
-            <div id="DS" class="tab">
-                <p>I've had quite the adventure navigating the realms of data science in my career. At Bungalow, I teamed up with 
-                    some incredibly smart data scientists to cook up a predictive pricing model, making our property rental revenues 
-                    sing to a more profitable tune. </p>
-
-                    <p>In my Amazon Prime days, I wore the Senior PM hat, and we created a nifty recommendation widget. It smartly 
-                    suggested seasonally relevant items to customers, adding some extra sparkle to their shopping carts. It was all 
-                    about getting into the mindset of our customers and predicting what they'd love next.</p>
-                    
-                    <p>Then, there was Alexa Shopping List. As a Senior Technical PM, we took 'smart' to a whole new level. Imagine 
-                        adding an item to your shopping list and Alexa immediately suggesting the next item based on your previous 
-                        choices - neat, right? </p>
-                    
-                    <p>In a nutshell, I absolutely love diving into data, uncovering insights, and using those nuggets of knowledge 
-                        to create experiences customers adore!</p>
             </div>
 
-        </div>
-
-        <!---Other section-->
-        <div class="contact-me">
-            <p> To contact me, please reach out to me on LinkedIn </p>
+            <!---Other section-->
+            <div class="contact-me">
+                <p> To contact me, please reach out to me on LinkedIn </p>
+            </div>
         </div>
 
         <!--- Footer -->
