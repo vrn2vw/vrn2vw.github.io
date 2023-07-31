@@ -228,6 +228,22 @@
         </style>
 
         <script>
+            //Headshot Javascript
+            // Get the image element
+            var img = document.getElementById("profile-pic");
+
+            // Add an event listener for 'mouseover'
+            img.addEventListener("mouseover", function() {
+                // Change the source of the image
+                img.src = "VimalAlt.jpg";
+            });
+
+            // Add an event listener for 'mouseout'
+            img.addEventListener("mouseout", function() {
+                // Change the source of the image back to original
+                img.src = "VimalHeadshot.jpg";
+            });
+            
             //Tabs Javascript
             var openedTab = null; // this variable will store the name of the opened tab, if any
 
